@@ -78,71 +78,6 @@ Machine Learning classification results with features and predictions.
 }
 ```
 
-## Dataset Statistics
-
-### Raw Data Distribution
-
-| Month | Test IDs | Documents | Size |
-|-------|----------|-----------|------|
-| July | 8 subjects | 23.8M | ~1.1 GB |
-| August | 10 subjects | 5.1M | ~243 MB |
-| September | 6 subjects | 3.2M | ~150 MB |
-| **Total** | **19 subjects** | **32.2M** | **~1.5 GB** |
-
-### ML Predictions
-
-- **Period**: September 5-30, 2024
-- **Subjects**: 6 (test_id: 103, 300, 500, 1000, 1001, 1002)
-- **Records**: 2,082 predictions
-- **Features**: 85 per record
-
-## Usage
-
-### Loading Raw Data
-
-```python
-import json
-import gzip
-
-# Read compressed JSON file
-with gzip.open('pixel_watch_data_2024/julio_test_id_100.json.gz', 'rt') as f:
-    data = json.load(f)
-
-print(f"Loaded {len(data)} sensor readings")
-```
-
-### Loading ML Predictions
-
-```python
-import json
-import pandas as pd
-
-# Load predictions
-with open('cloudresults_all.json', 'r') as f:
-    predictions = json.load(f)
-
-# Convert to DataFrame
-df = pd.json_normalize(predictions)
-print(df.head())
-```
-
-### Combining Multiple Files
-
-```python
-import glob
-import gzip
-import json
-
-# Load all files for a specific subject
-all_data = []
-for filepath in glob.glob('pixel_watch_data_2024/*_test_id_1000*.json.gz'):
-    with gzip.open(filepath, 'rt') as f:
-        data = json.load(f)
-        all_data.extend(data)
-
-print(f"Total records: {len(all_data)}")
-```
-
 ## Notes
 
 - **Large files** have been split into multiple parts (`_parte_1`, `_parte_2`, etc.) to comply with GitHub's 100MB file size limit
@@ -151,19 +86,6 @@ print(f"Total records: {len(all_data)}")
 - Negative test IDs indicate preliminary/testing data
 - Data is compressed using gzip to reduce storage size
 
-## Citation
-
-If you use this dataset, please cite:
-
-```
-[Add citation information here]
-```
-
-## License
-
-[Add license information here]
-
 ## Contact
 
-[Add contact information here]
-
+For questions or issues, please contact: marodriguezf@uc.cl
