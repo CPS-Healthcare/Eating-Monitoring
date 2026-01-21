@@ -8,7 +8,6 @@ The dataset includes **raw sensor measurements**, **extracted features**, and **
 
 **Period**: July - September 2024  
 **Device**: Google Pixel Watch  
-**Total Records**: ~32 million sensor readings  
 **Purpose**: Eating vs. Non-eating activity classification
 
 ## Repository Structure
