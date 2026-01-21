@@ -12,7 +12,13 @@ The dataset includes **raw sensor measurements**, **extracted features**, and **
 
 ## Repository Structure
 
-### 1. Raw Sensor Data (`pixel_watch_data_2024/`)
+### 1. Pixel Watch Data (`pixel_watch_data/`)
+
+This folder is designated for storing raw data files from Google Pixel Watch devices. Users can place their sensor data files here for processing and analysis.
+
+**Purpose**: Central location for incoming raw data files from Pixel Watch devices before processing.
+
+### 2. Raw Sensor Data (`pixel_watch_data_2024/`)
 
 Time-series sensor measurements from Google Pixel Watch accelerometer and gyroscope.
 
@@ -34,7 +40,7 @@ Time-series sensor measurements from Google Pixel Watch accelerometer and gyrosc
 - `agosto_*`: August 2024  
 - `septiembre_*`: September 2024
 
-### 2. ML Model Predictions (`cloudresults_all.json`)
+### 3. ML Model Predictions (`cloudresults_all.json`)
 
 Machine Learning classification results with features and predictions.
 
