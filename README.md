@@ -12,33 +12,11 @@ The dataset includes **raw sensor measurements**, **extracted features**, and **
 
 ## Repository Structure
 
-### 1. Raw Pixel Data (`raw_pixel_data/`)
+### 1. Features (`features/`)
 
-Time-series sensor measurements from Google Pixel Watch accelerometer and gyroscope.
+Extracted features and ML model predictions from processed sensor data.
 
-**File naming**: `{month}_test_id_{id}.json.gz`
-
-- Compressed JSON files (gzip)
-- Organized by month and subject ID
-- Files split into parts when >100MB (e.g., `_part_1.json.gz`, `_part_2.json.gz`)
-
-**Data fields**:
-- `timestamp`: Measurement timestamp
-- `test_id`: Subject identifier
-- `values`: Sensor readings (accelerometer, gyroscope, battery, etc.)
-- `connectionType`: WiFi/Cellular
-- `signal_strength`: Connection quality
-
-**Months**:
-- `july_*`: July 2024
-- `august_*`: August 2024  
-- `september_*`: September 2024
-
-### 2. ML Model Predictions (`cloudresults_all.json`)
-
-Machine Learning classification results with features and predictions.
-
-**File**: `cloudresults_all.json` (8.99 MB, 2,082 records)
+**File**: `features.json`
 
 **Content**:
 - **85 extracted features** per window (acceleration/gyroscope statistics)
@@ -68,7 +46,7 @@ Machine Learning classification results with features and predictions.
       "bagging_classifier": 0,
       "xgboost_classifier": 0
     },
-    "predicionProb": {
+    "predictionProb": {
       "random_forest_classifier": 0.681,
       "gradient_boosting_classifier": 0.810,
       ...
@@ -76,6 +54,28 @@ Machine Learning classification results with features and predictions.
   }
 }
 ```
+
+### 2. Raw Pixel Data (`raw_pixel_data/`)
+
+Time-series sensor measurements from Google Pixel Watch accelerometer and gyroscope.
+
+**File naming**: `{month}_test_id_{id}.json.gz`
+
+- Compressed JSON files (gzip)
+- Organized by month and subject ID
+- Files split into parts when >100MB (e.g., `_part_1.json.gz`, `_part_2.json.gz`)
+
+**Data fields**:
+- `timestamp`: Measurement timestamp
+- `test_id`: Subject identifier
+- `values`: Sensor readings (accelerometer, gyroscope, battery, etc.)
+- `connectionType`: WiFi/Cellular
+- `signal_strength`: Connection quality
+
+**Months**:
+- `july_*`: July 2024
+- `august_*`: August 2024  
+- `september_*`: September 2024
 
 ## Notes
 
