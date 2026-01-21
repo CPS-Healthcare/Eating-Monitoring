@@ -12,13 +12,7 @@ The dataset includes **raw sensor measurements**, **extracted features**, and **
 
 ## Repository Structure
 
-### 1. Pixel Watch Data (`pixel_watch_data/`)
-
-This folder is designated for storing raw data files from Google Pixel Watch devices. Users can place their sensor data files here for processing and analysis.
-
-**Purpose**: Central location for incoming raw data files from Pixel Watch devices before processing.
-
-### 2. Raw Sensor Data (`pixel_watch_data_2024/`)
+### 1. Raw Pixel Data (`raw_pixel_data/`)
 
 Time-series sensor measurements from Google Pixel Watch accelerometer and gyroscope.
 
@@ -26,7 +20,7 @@ Time-series sensor measurements from Google Pixel Watch accelerometer and gyrosc
 
 - Compressed JSON files (gzip)
 - Organized by month and subject ID
-- Files split into parts when >100MB (e.g., `_parte_1.json.gz`, `_parte_2.json.gz`)
+- Files split into parts when >100MB (e.g., `_part_1.json.gz`, `_part_2.json.gz`)
 
 **Data fields**:
 - `timestamp`: Measurement timestamp
@@ -36,11 +30,11 @@ Time-series sensor measurements from Google Pixel Watch accelerometer and gyrosc
 - `signal_strength`: Connection quality
 
 **Months**:
-- `julio_*`: July 2024
-- `agosto_*`: August 2024  
-- `septiembre_*`: September 2024
+- `july_*`: July 2024
+- `august_*`: August 2024  
+- `september_*`: September 2024
 
-### 3. ML Model Predictions (`cloudresults_all.json`)
+### 2. ML Model Predictions (`cloudresults_all.json`)
 
 Machine Learning classification results with features and predictions.
 
@@ -85,7 +79,7 @@ Machine Learning classification results with features and predictions.
 
 ## Notes
 
-- **Large files** have been split into multiple parts (`_parte_1`, `_parte_2`, etc.) to comply with GitHub's 100MB file size limit
+- **Large files** have been split into multiple parts (`_part_1`, `_part_2`, etc.) to comply with GitHub's 100MB file size limit
 - All timestamps are in UTC
 - Test IDs are anonymized subject identifiers
 - Negative test IDs indicate preliminary/testing data
