@@ -19,7 +19,6 @@ Extracted features and ML model predictions from processed sensor data.
 **File**: `features.json`
 
 **Content**:
-- **85 extracted features** per window (acceleration/gyroscope statistics)
 - **4 ML model predictions**:
   - Random Forest Classifier
   - Gradient Boosting Classifier
